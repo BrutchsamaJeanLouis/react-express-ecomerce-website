@@ -1,0 +1,12 @@
+GET http://localhost:8080/api/logout HTTP/1.1
+
+###
+
+POST http://localhost:8080/api/register HTTP/1.1
+content-type: application/json
+
+{
+  "email": "me@gmail.com",
+  "username": "user1",
+  "password": "password"
+}
