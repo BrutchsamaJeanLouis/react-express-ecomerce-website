@@ -1,0 +1,3 @@
+To Generate a new Model
+use command: npx sequelize-cli model:generate --name Item --attributes name:string 
+this also creates a migration mapping of the model
