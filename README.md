@@ -1,8 +1,28 @@
 # react-express-ecomerce-website
 
-requirements
+# requirements
 MySQL 5.7 higher version will not work
 NodeJS v14
+
+# modules
+environment manager: dotenv
+server: expressJS
+http sessions: express-sessions (MySQl store)
+ORM: Sequelize
+endpoint object validator: AJV
+endpoint limit: express-rate-limiter
+multi part form data parser: Multer
+image manipulation: Sharp
+bundler: Vite
+framework: ReactJS
+UI: Bootstrap5
+form validation: Formik
+browser routing: React router
+notification: toastify
+XHR & fetching: axios
+app state manager: Redux
+s3 bucket: serverless-s3-local
+password hashing: Bcrypt
 
 
 ### Run instructions

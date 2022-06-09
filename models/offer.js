@@ -17,22 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Offer.init({
-    name: {
-      type: DataTypes.STRING
-    },
-    description: {
+    text: {
       type: DataTypes.TEXT
-    },
-    location: {
-      type: DataTypes.STRING
-    },
-    category: {
-      type: DataTypes.STRING
     }
   }, {
     sequelize,
-    modelName: 'Item',
-    tableName: 'item',
+    modelName: 'Offer',
+    tableName: 'offer',
     timestamps: true
   })
 

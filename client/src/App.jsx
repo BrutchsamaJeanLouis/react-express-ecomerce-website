@@ -3,16 +3,11 @@ import './App.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 import { Route, Routes } from 'react-router-dom'
-import Home from './views/Home/Home'
 import Login from './views/Login/Login'
-import Register from './views/Register'
-import RegisterConfirm from './views/RegisterConfirm'
+import Register from './views/Register/Register'
 import axios from 'axios'
-import ItemCreate from './views/ItemCreate'
 import { ProtectedRoute } from './utils/ProtectedRoute'
 import verifyAuthState from './utils/verifyAuthState'
-import Item from './views/Item'
-import PostList from './views/PostList/PostsList'
 axios.defaults.withCredentials = true
 
 // TODO sync progmatically with backend

@@ -3,13 +3,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { Formik } from 'formik'
-import logo from '../images/logo.png'
+import logo from '../../images/logo.png'
 
 export default function Register () {
   const navigate = useNavigate()
 
   const submitRegistration = async (formData) => {
-    return
     await axios.post('/api/register', {
       email: formData.email,
       username: formData.username,
