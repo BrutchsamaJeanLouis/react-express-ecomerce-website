@@ -8,6 +8,7 @@ import Register from './views/Register/Register'
 import axios from 'axios'
 import { ProtectedRoute } from './utils/ProtectedRoute'
 import verifyAuthState from './utils/verifyAuthState'
+import ItemCreate from './views/ItemCreate/ItemCreate'
 axios.defaults.withCredentials = true
 
 // TODO sync progmatically with backend
@@ -56,6 +57,7 @@ function App () {
       <Routes>
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/create-listing' element={<ProtectedRoute roles={['standard', 'admin', 'moderator']}><ItemCreate /></ProtectedRoute>} />
       </Routes>
     </div>
   )
