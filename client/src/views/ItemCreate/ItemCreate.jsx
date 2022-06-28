@@ -18,7 +18,9 @@ export default function ItemCreate () {
       location: formData.location,
       category: formData.category,
       description: formData.description,
-      images: Object.assign({}, formData.images)
+      images: Object.assign({}, formData.images),
+      price: formData.price,
+      quantity: formData.quantity
     }
     console.log(postData)
     await axios.post(
@@ -58,7 +60,7 @@ export default function ItemCreate () {
     <div>
       Post <br />
       <Formik
-        initialValues={{ name: '', location: 'test', category: 'cat', description: 'desc', images: [] }}
+        initialValues={{ name: '', price: '', quantity: '', location: 'test', category: 'cat', description: 'desc', images: [] }}
         validate={values => {
           const errors = {}
           if (!values.images) errors.images = 'Please Upload a File'
@@ -86,6 +88,8 @@ export default function ItemCreate () {
             <input type='text' placeholder='description' name='description' value={values.description} onChange={handleChange} onBlur={handleBlur} required /><br />
             <input type='text' placeholder='city' name='city' value={values.city} onChange={handleChange} onBlur={handleBlur} required /><br />
             <input type='text' placeholder='postcode' name='postcode' value={values.postcode} onChange={handleChange} onBlur={handleBlur} required /><br />
+            <input type='text' placeholder='price' name='price' value={values.price} onChange={handleChange} onBlur={handleBlur} required /><br />
+            <input type='text' placeholder='quantity' name='quantity' value={values.quantity} onChange={handleChange} onBlur={handleBlur} required /><br />
             {errors.images && touched.images && <span className='text-danger'>{errors.images}</span>}
             {/* Display Images */}
             {values.images &&

@@ -55,6 +55,7 @@ function App () {
     <div className='App'>
       <ToastContainer />
       <Routes>
+        <Route index element={<div>Home</div>} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/create-listing' element={<ProtectedRoute roles={['standard', 'admin', 'moderator']}><ItemCreate /></ProtectedRoute>} />

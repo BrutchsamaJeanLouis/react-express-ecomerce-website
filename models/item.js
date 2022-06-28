@@ -21,6 +21,12 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING
     },
+    price: {
+      type: DataTypes.DECIMAL(10, 2)
+    },
+    quantity: {
+      type: DataTypes.INTEGER
+    },
     description: {
       type: DataTypes.TEXT
     },

@@ -62,7 +62,7 @@ router.post('/local-bare-file', ensureAuthenticationAny, uploadDisk.single('imag
 // after .single(this is the name/fieldId)
 router.post('/', ensureAuthenticationAny, multer().any('images'), async (req, res) => {
   // TODO FIX-ME description is not coming through from HTML form
-  const { name, description, location, category } = req.body
+  const { name, description, location, category, price, quantity } = req.body
 
   if (!req.files) return res.status(400).json({ error: 'Please Include a File to Upload' })
   const itemEntry = await db.Item.create({
@@ -70,7 +70,9 @@ router.post('/', ensureAuthenticationAny, multer().any('images'), async (req, re
     description: description,
     location: location,
     category: category,
-    userId: req.session.user.id
+    userId: req.session.user.id,
+    price: parseFloat(price),
+    quantity: parseInt(quantity)
   })
 
   const successUploadResult = []
